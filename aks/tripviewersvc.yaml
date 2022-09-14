@@ -4,11 +4,11 @@ metadata:
   name: tripviewer
   namespace: web
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
-    app: tripviewers
+    app: tripviewer
   ports:
     - port: 80 # SERVICE exposed port
       name: http # SERVICE port name
       protocol: TCP # The protocol the SERVICE will listen to
-      targetPort: 80 # Port to forward to in the POD
+      targetPort: http  # Port to forward to in the POD

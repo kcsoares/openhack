@@ -23,6 +23,7 @@ spec:
           value: http://userprofile.api
         ports:
         - containerPort: 80
+          name: http
         resources:
           requests:
             cpu: 250m
