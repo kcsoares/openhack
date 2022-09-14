@@ -12,3 +12,14 @@ spec:
       name: http # SERVICE port name
       protocol: TCP # The protocol the SERVICE will listen to
       targetPort: 80 # Port to forward to in the POD
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: user-java-external
+spec:
+  type: ExternalName
+  externalName: user-java.api.svc.cluster.local
+  ports:
+  - port: 80
+    name: http

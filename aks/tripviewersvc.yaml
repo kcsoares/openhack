@@ -12,3 +12,14 @@ spec:
       name: http # SERVICE port name
       protocol: TCP # The protocol the SERVICE will listen to
       targetPort: http  # Port to forward to in the POD
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tripviewer-external
+spec:
+  type: ExternalName
+  externalName: tripviewer.web.svc.cluster.local
+  ports:
+  - port: 80
+    name: http

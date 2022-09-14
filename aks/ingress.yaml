@@ -12,35 +12,35 @@ spec:
         paths:
           - backend: # How the ingress will handle the requests
               service:
-               name: tripviewer # Which service the request will be forwarded to
+               name: tripviewer-external # Which service the request will be forwarded to
                port:
                  name: http # Which port in that service
             path: / # Which path is this rule referring to
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
           - backend: # How the ingress will handle the requests
               service:
-               name: poi # Which service the request will be forwarded to
+               name: poi-external # Which service the request will be forwarded to
                port:
                  name: http # Which port in that service
             path: /api/poi # Which path is this rule referring to
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
           - backend: # How the ingress will handle the requests
               service:
-               name: trips # Which service the request will be forwarded to
+               name: trips-external # Which service the request will be forwarded to
                port:
                  name: http # Which port in that service
             path: /api/trips # Which path is this rule referring to
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
           - backend: # How the ingress will handle the requests
               service:
-               name: user-java # Which service the request will be forwarded to
+               name: user-java-external # Which service the request will be forwarded to
                port:
                  name: http # Which port in that service
             path: /api/user-java # Which path is this rule referring to
             pathType: Prefix # See more at https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types
           - backend: # How the ingress will handle the requests
               service:
-               name: userprofile # Which service the request will be forwarded to
+               name: userprofile-external # Which service the request will be forwarded to
                port:
                  name: http # Which port in that service
             path: /api/user # Which path is this rule referring to
