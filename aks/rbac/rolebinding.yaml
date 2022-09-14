@@ -1,0 +1,55 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: web-n-web
+  namespace: web
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-web-n-web
+subjects:
+- kind: Group
+  namespace: web
+  name: 1444cb0f-1775-4233-9ae5-be05a8929204
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: web-n-api
+  namespace: api
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-web-n-api
+subjects:
+- kind: Group
+  namespace: api
+  name: 1444cb0f-1775-4233-9ae5-be05a8929204
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: api-n-web
+  namespace: web
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-api-n-web
+subjects:
+- kind: Group
+  namespace: web
+  name: 10d47734-d6cb-4d69-af04-a0ec01e7c154
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: api-n-api
+  namespace: api
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-api-n-api
+subjects:
+- kind: Group
+  namespace: api
+  name: 10d47734-d6cb-4d69-af04-a0ec01e7c154
